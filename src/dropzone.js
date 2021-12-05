@@ -5,7 +5,7 @@ import 'react-dropzone-uploader/dist/styles.css'
 const DropImage = (props) => {
     const [statusDrop, setStat] = useState('Drag File Here and submit');
     const getUploadParams = ({ meta }) => {
-        const url = 'https://185.208.175.202:1900/uploadImage/'
+        const url = 'http://185.208.175.202:1900/uploadImage/'
         return { url, meta: { fileUrl: `${url}` } }
     }
     const handleChangeStatus = ({ meta }, status) => {
@@ -16,7 +16,7 @@ const DropImage = (props) => {
         formData.append("lat", props.lat);
         formData.append("lon", props.lon);
         fetch(
-            'https://185.208.175.202:1900/location/',
+            'http://185.208.175.202:1900/location/',
             {
                 method: 'POST',
                 body: formData,
@@ -33,7 +33,7 @@ const DropImage = (props) => {
     }
     const handleSubmit = (files, allFiles) => {
         fetch(
-            'https://185.208.175.202:1900/uploadImage/',
+            'http://185.208.175.202:1900/uploadImage/',
             {
                 method: 'POST',
                 body: files.map(f => f.meta),
