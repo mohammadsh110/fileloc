@@ -25,6 +25,7 @@ const DropImage = (props) => {
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
+                alert("file uploaded");
             })
             .catch((error) => {
                 setStat("Error in File uploading")
